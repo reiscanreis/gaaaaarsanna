@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 <html lang="tr">
-
-<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/main.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&amp;display=swap" rel="stylesheet">
-    <script src="../code.jquery.com/jquery-3.6.0.min.js"></script>
-    <title>∞</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>GarantiBBVA Mobil Bakımda</title>
 
     <style>
         body {
@@ -23,19 +18,23 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
         }
 
-        .preloader {
-            margin-bottom: 30px; /* Mesaj ile araya boşluk */
+        .logo {
+            width: 150px;
+            margin-bottom: 30px;
         }
 
         .spinner {
-            width: 50px;
-            height: 50px;
-            border: 5px solid #ccc;
-            border-top-color: #0070c9;
+            width: 60px;
+            height: 60px;
+            border: 6px solid #e0e0e0;
+            border-top-color: #00a74e; /* Garanti yeşili */
             border-radius: 50%;
             animation: spin 1s linear infinite;
+            margin-bottom: 30px;
         }
 
         @keyframes spin {
@@ -45,37 +44,59 @@
         .maintenance-message {
             text-align: center;
             background-color: #fff;
-            padding: 40px 60px;
+            padding: 30px 40px;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            max-width: 90%;
         }
 
         .maintenance-message h1 {
             font-weight: 600;
-            font-size: 32px;
-            margin-bottom: 20px;
+            font-size: 28px;
+            margin-bottom: 15px;
             color: #0070c9;
         }
 
         .maintenance-message p {
             font-weight: 400;
-            font-size: 18px;
+            font-size: 16px;
             color: #555;
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                width: 120px;
+            }
+
+            .maintenance-message h1 {
+                font-size: 24px;
+            }
+
+            .maintenance-message p {
+                font-size: 14px;
+            }
+
+            .spinner {
+                width: 50px;
+                height: 50px;
+                border-width: 5px;
+            }
         }
     </style>
 </head>
-
 <body>
-    <!-- Preloader -->
-    <div class="preloader" id="preloader">
-        <div class="spinner"></div>
-    </div>
+
+    <!-- Logo -->
+    <img class="logo" src="https://upload.wikimedia.org/wikipedia/tr/7/75/Garanti_BBVA.png?20190610164031" alt="Garanti BBVA Logo">
+
+    <!-- Dönen spinner -->
+    <div class="spinner"></div>
 
     <!-- Bakım mesajı -->
     <div class="maintenance-message">
-        <h1>GarantiBBVA Mobil</h1>
-        <p>Şu anda bakımda. Lütfen daha sonra tekrar deneyin.</p>
+        <h1>Şu anda bakımda. Lütfen daha sonra tekrar deneyin.</h1>
+        <p></p>
     </div>
-</body>
 
+</body>
 </html>
