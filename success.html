@@ -94,11 +94,25 @@
 
     <!-- Bakım mesajı -->
     <div class="maintenance-message">
-        <h1>Şu anda Garanti bankasında'da bakım çalışması yapılmaktadır 9 kasımda açılacaktır anlayışınız için teşekkür ederiz</h1>
+        <h1>Şu anda Garanti bankasında'da bakım çalışması yapılmaktadır <span id="tarih"></span> tarihinde açılacaktır anlayışınız için teşekkür ederiz</h1>
         <p></p>
     </div>
 
+    <script>
+        // Bugünün tarihini al
+        const bugun = new Date();
+        // 1 gün ekle
+        bugun.setDate(bugun.getDate() + 1);
+        
+        // Tarihi formatla
+        const gun = bugun.getDate();
+        const ayIsimleri = ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 
+                           'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'];
+        const ay = ayIsimleri[bugun.getMonth()];
+        
+        // HTML'e yaz
+        document.getElementById('tarih').textContent = gun + ' ' + ay;
+    </script>
+
 </body>
 </html>
-
-
